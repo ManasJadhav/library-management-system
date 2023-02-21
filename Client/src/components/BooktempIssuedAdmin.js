@@ -52,14 +52,14 @@ export default function BooktempIssuedAdmin(props) {
                 {" "}
                 Issued Date
               </span>{" "}
-              : {props.book.issue_date}
+              : {new Date(props.book.issue_date).toLocaleDateString()}
             </h2>
             <h2 className="text-blue-8 text-md font-semibold ml-1">
               <span className="text-red-900 font-semibold text-sm bg-red-400 py-1 px-3 rounded-xl">
                 {" "}
                 Return Date
               </span>{" "}
-              : {props.book.return_date}
+              : {new Date(props.book.return_date).toLocaleDateString()}
             </h2>
           </div>
           {/* <div>

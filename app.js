@@ -31,12 +31,6 @@ mongoose
   })
   .catch((err) => console.error(err));
 
-app.use(express.static("client/build"));
-const path = require("path");
-app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
-
 app.use(userRoutes);
 app.use(adminRoutes);
 app.use(logoutRoute);
