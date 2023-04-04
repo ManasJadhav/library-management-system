@@ -64,12 +64,12 @@ export default function NavbarUser(props) {
           ) : undefined}
           <ProfileTemp Profile={Profile} show={show} />
           <h1>
-            {!isLoggedin ? (
-              <h1 className="cursor-pointer">Login</h1>
-            ) : (
+            {isLoggedin ? (
               <h1 onClick={handleLogout} className="cursor-pointer text-white">
                 <a href="/">Logout</a>
               </h1>
+            ) : (
+              <h1 className="cursor-pointer">Login</h1>
             )}
           </h1>
         </nav>
