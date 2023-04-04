@@ -11,14 +11,17 @@ export default function Home(props) {
 
   useEffect(() => {
     async function handleUser() {
-      const res = await fetch("/getAdmin");
+      const res = await fetch("/auth");
       const data = await res.json();
-      if (data.AuthError) {
+      console.log(data);
+      if (data.msg === "User Login Found") {
         setIsUser((prev) => (prev = "User"));
         setIsLoggedIn(false);
-      } else {
+      } else if (data.msg === "Admin Login Found") {
         setIsUser((prev) => (prev = "admin"));
         setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
       }
       console.log(isUser);
     }

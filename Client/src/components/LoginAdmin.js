@@ -29,7 +29,6 @@ export default function LoginAdmin() {
       body: JSON.stringify(admin),
     });
     const data = await res.json();
-    console.log(data);
     if (data.errors) {
       setError(data.errors);
     } else {

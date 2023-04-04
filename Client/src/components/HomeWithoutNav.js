@@ -9,7 +9,6 @@ export default function HomeWithoutNav(props) {
     async function handleUser() {
       const res = await fetch("/auth");
       const data = await res.json();
-      console.log(data);
       if (data.msg === "User Login Found" || data.msg === "Admin Login Found") {
         setIsLoggedIn(true);
         setMsg(data.msg);
