@@ -15,11 +15,11 @@ const app = express();
 const dbURI = process.env.DATABASE;
 const port = process.env.PORT || 5000;
 
-let corsOptions = {
-  origin: ["http://localhost:5500", "http://localhost:3000"],
-};
+// let corsOptions = {
+//   origin: ["http://localhost:5500", "http://localhost:3000"],
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public"));
