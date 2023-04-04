@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install --prefix client && npm run build --prefix client"
+    "build": "npm install --prefix Client && npm run build --prefix Client"
   },
   "author": "The-8-byte",
   "license": "ISC",
