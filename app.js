@@ -24,14 +24,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 
-if (process.env.NODE_ENV == "production") {
-  app.use(express.static("Client/build"));
-  const path = require("path");
-  app.get("*", function (req, res) {
-    res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
-  });
-}
-
 mongoose
   .connect(dbURI)
   .then((result) => {
@@ -45,3 +37,11 @@ app.use(adminRoutes);
 app.use(logoutRoute);
 app.use(authRoutes);
 app.use(checkRoute);
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("Client/build"));
+  const path = require("path");
+  app.get("*", function (req, res) {
+    res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
+  });
+}

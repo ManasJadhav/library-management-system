@@ -1,7 +1,6 @@
 {
   "name": "pbl",
   "version": "0.1.0",
-  "proxy" : "http://localhost:5000/",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^1.0.6",
