@@ -13,14 +13,14 @@ export default function NavbarAdmin(props) {
     async function handleNavbar() {
       const res = await fetch("/auth");
       const data = await res.json();
-      if (data.msg !== "Admin Login Found") {
-        setIsLoggedin(false);
-        navigate("/");
-      } else {
+      if (data.msg === "Admin Login Found") {
         setIsLoggedin(true);
         const profile = await fetch("/getAdmin");
         const proData = await profile.json();
         setProfile(proData.admin);
+      } else if (data.msg === "Proceed to login") {
+        setIsLoggedin(false);
+        navigate("/");
       }
     }
     handleNavbar();

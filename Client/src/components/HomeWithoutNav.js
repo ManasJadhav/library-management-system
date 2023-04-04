@@ -14,7 +14,7 @@ export default function HomeWithoutNav(props) {
         setMsg(data.msg);
       } else {
         setIsLoggedIn(false);
-        navigate("/admin_login");
+        navigate("/");
       }
     }
     handleUser();

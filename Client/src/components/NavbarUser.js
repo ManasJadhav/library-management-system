@@ -12,14 +12,14 @@ export default function NavbarUser(props) {
     async function handleNavbar() {
       const res = await fetch("/auth");
       const data = await res.json();
-      if (data.msg !== "User Login Found") {
-        setIsLoggedin(false);
-        navigate("/user_login");
-      } else {
+      if (data.msg === "User Login Found") {
         setIsLoggedin(true);
         const pro = await fetch("/getProfile");
         const proData = await pro.json();
         setProfile(proData.user);
+      } else if (data.msg === "Proceed to login") {
+        setIsLoggedin(false);
+        navigate("/user_login");
       }
     }
     handleNavbar();
