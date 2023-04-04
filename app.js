@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static("public"));
 
 if (process.env.NODE_ENV == "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("Client/build"));
   const path = require("path");
   app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
