@@ -26,12 +26,14 @@ export default function Home(props) {
   }, []);
   return (
     <div>
-      {!isLoggedIn ? (
-        <Navbar />
-      ) : isUser === "admin" ? (
-        <NavbarAdmin />
+      {isLoggedIn ? (
+        isUser === "admin" ? (
+          <NavbarAdmin />
+        ) : (
+          <NavbarUser />
+        )
       ) : (
-        <NavbarUser />
+        <Navbar />
       )}
 
       <div className="grid grid-cols-2 pl-24 py-10">
